@@ -24,6 +24,6 @@ addlist([]) -> 0;
 addlist([H|T]) -> [H + addlist(T)].
 
 
-% number() -> [X || X <- lists:seq(1,100), X rem 3==0, X rem 5==0, X rem 6==0].
+number() -> [X || X <- lists:seq(1,100), X rem 3==0, X rem 5==0, X rem 6==0].
 
 number() -> lists:foreach(fun(X) -> io:format("Element: ~p~n", [X]) end, [X || X <- lists:seq(1,100), (X rem 3==0) and (X rem 5==0) and (X rem 6==0)]).
